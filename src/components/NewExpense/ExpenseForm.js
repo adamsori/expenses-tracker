@@ -60,7 +60,7 @@ const ExpenseForm = (props) => {
         event.preventDefault();
         const expenseData = {
             title: enteredTitle, // enteredTitle points at the state const [enteredTitle, setEnteredTitle] = useState('');
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         };
         props.onSaveExpenseData(expenseData);
@@ -69,8 +69,8 @@ const ExpenseForm = (props) => {
         setEnteredDate('');
     };
 
-
     return (
+
         <form onSubmit={submitHandler}>
             <div className='new-expense__constrols'>
                 <div className='new-expense__control'>
@@ -102,11 +102,14 @@ const ExpenseForm = (props) => {
                     />
                 </div>
             </div>
+            <br></br>
             <div className='new-expense__actions'>
+                <button type='button' onClick={props.onCancel}>Cancel</button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>
     )
+
 };
 
 export default ExpenseForm;
