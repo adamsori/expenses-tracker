@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
+    // REACT HOOK useState -> retorna dois elementos, o valor atual do prop e uma funcao de update
+    // Separated state per component instance
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
@@ -15,7 +17,6 @@ const ExpenseForm = (props) => {
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value);
     };
-
 
     /*
     THIS IS AN ALTERNATIVE FOR THE CODE AT THE BEGINNING
